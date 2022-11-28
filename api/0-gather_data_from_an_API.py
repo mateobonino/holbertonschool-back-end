@@ -3,16 +3,16 @@
 For a given employee ID, returns information about his/her TODO list progress.
 """
 
-
-import requests
 import json
+import requests
 import sys
+
 
 def request_api():
     """ Makes a request to the JSONPlaceholder API """
     user_id = sys.argv[1]
-    url = "https://jsonplaceholder.typicode.com/todos?userId={}".format(user_id)
-    get_name = "https://jsonplaceholder.typicode.com/users?id={}".format(user_id)
+    url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
+    get_name = f"https://jsonplaceholder.typicode.com/users?id={user_id)"
     response = requests.get(url)
     user_response = requests.get(get_name)
     result = response.json()
@@ -30,8 +30,9 @@ def request_api():
         if 'name' in name.keys():
             employee_name = name['name']
 
-    print("Employee {} is done with tasks({}/{})):".format(employee_name, count,
-                                                        total_tasks))
+    print("Employee {} is done with tasks({}/{})):".format(employee_name,
+                                                           count,
+                                                           total_tasks))
     for task in tasks_text:
         print("\t {}".format(task))
 
