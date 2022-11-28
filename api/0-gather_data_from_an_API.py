@@ -5,7 +5,6 @@ TODO list progress.
 """
 
 
-import json
 import requests
 import sys
 
