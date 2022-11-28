@@ -1,19 +1,12 @@
 #!/usr/bin/python3
 """
-For a given employee ID, returns information about his/her
-TODO list progress.
+Write a Python script that, using this REST API, for a given employee ID,
+returns information about his/her TODO list progress.
 """
 
 
 import requests
 import sys
-
-
-"""
-Makes a request to the JSONPlaceholder API
-idk what else to write here please stop with
-the module is documented check
-"""
 
 
 user_id = sys.argv[1]
