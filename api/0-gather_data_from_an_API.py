@@ -2,6 +2,9 @@
 import requests
 import json
 import sys
+"""
+For a given employee ID, returns information about his/her TODO list progress.
+"""
 user_id = sys.argv[1]
 url = "https://jsonplaceholder.typicode.com/todos?userId={}".format(user_id)
 get_name = "https://jsonplaceholder.typicode.com/users?id={}".format(user_id)
