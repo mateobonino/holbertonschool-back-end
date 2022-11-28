@@ -12,7 +12,7 @@ def request_api():
     """ Makes a request to the JSONPlaceholder API """
     user_id = sys.argv[1]
     url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
-    get_name = f"https://jsonplaceholder.typicode.com/users?id={user_id)"
+    get_name = f"https://jsonplaceholder.typicode.com/users?id={user_id}"
     response = requests.get(url)
     user_response = requests.get(get_name)
     result = response.json()
