@@ -11,6 +11,8 @@ import sys
 
 """
 Makes a request to the JSONPlaceholder API
+idk what else to write here please stop with
+the module is documented check
 """
 
 
