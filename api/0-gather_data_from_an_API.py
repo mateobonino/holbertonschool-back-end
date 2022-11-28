@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-For a given employee ID, returns information about his/her TODO list progress.
+For a given employee ID, returns information about his/her
+TODO list progress.
 """
+
 
 import json
 import requests
@@ -9,8 +11,8 @@ import sys
 
 
 def request_api():
-    """ 
-    Makes a request to the JSONPlaceholder API 
+    """
+    Makes a request to the JSONPlaceholder API
     """
     user_id = sys.argv[1]
     url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
