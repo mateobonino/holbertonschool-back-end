@@ -17,10 +17,14 @@ the module is documented check
 
 
 user_id = sys.argv[1]
-url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
-get_name = f"https://jsonplaceholder.typicode.com/users?id={user_id}"
-response = requests.get(url)
-user_response = requests.get(get_name)
+url = "https://jsonplaceholder.typicode.com/todos"
+get_name = "https://jsonplaceholder.typicode.com/users"
+response = requests.get(
+    url,
+    params={'userId': int(user_id)})
+user_response = requests.get(
+    get_name,
+    params={'id': int(user_id)})
 count = 0
 total_tasks = 0
 tasks_text = []
