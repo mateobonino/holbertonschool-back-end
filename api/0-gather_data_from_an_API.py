@@ -32,8 +32,8 @@ for name in user_response.json():
     if 'name' in name.keys():
         employee_name = name['name']
 
-print("Employee {} is done with tasks({}/{})):".format(employee_name,
-                                                       count,
-                                                       total_tasks))
+print("Employee {} is done with tasks({}/{}):".format(employee_name,
+                                                      count,
+                                                      total_tasks))
 for task in tasks_text:
     print("\t {}".format(task))
