@@ -16,15 +16,14 @@ if __name__ == '__main__':
     user_response = requests.get(
         get_name,
         params={'id': int(user_id)})
-    count = 0
-    total_tasks = 0
-    tasks_text = []
 
     for name in user_response.json():
         if 'name' in name.keys():
             employee_name = name['name']
 
     for key in response.json():
-        print('"{}", "{}", "{}", "{}"'.format(user_id,
-                                              employee_name, key['completed'],
-                                              key['title']))
+        with open('{}.csv'.format(sys.argv[1]), 'a+') as f:
+            f.write('"{}", "{}", "{}", "{}"'.format(user_id,
+                                                    employee_name, key['completed'],
+                                                    key['title']))
+    f.close()
