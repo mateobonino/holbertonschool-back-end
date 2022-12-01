@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     for key in response.json():
         with open('{}.csv'.format(sys.argv[1]), 'a+') as f:
-            f.write('"{}", "{}", "{}", "{}"'.format(user_id,
+            f.write('"{}", "{}", "{}", "{}"\n'.format(user_id,
                                                     employee_name, key['completed'],
                                                     key['title']))
     f.close()
