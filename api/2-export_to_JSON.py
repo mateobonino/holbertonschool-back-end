@@ -21,8 +21,8 @@ if __name__ == '__main__':
     for task in response:
         to_dump = {}
         to_dump['task'] = task.get('title')
-        to_dump['username'] = user_response.get('username')
         to_dump['completed'] = task.get('completed')
+        to_dump['username'] = user_response.get('username')
         container[key].append(to_dump)
         with open("{}.json".format(sys.argv[1]), 'a+') as f:
             json.dump(container, f)
