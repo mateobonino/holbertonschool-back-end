@@ -15,17 +15,14 @@ if __name__ == '__main__':
         url,
         params={'userId': int(user_id)}).json()
     user_response = requests.get(get_name).json()
-    employee_name = ''
-    if user_response['id'] == int(user_id):
-        employee_name = user_response['username']
 
     container = {"{}".format(sys.argv[1]): []}
     key = "{}".format(sys.argv[1])
     for task in response:
         to_dump = {}
-        to_dump['task'] = task['title']
-        to_dump['username'] = user_response['username']
-        to_dump['completed'] = task['completed']
+        to_dump['task'] = task.get('title')
+        to_dump['username'] = user_response.get('username')
+        to_dump['completed'] = task.get('completed')
         container[key].append(to_dump)
         with open("{}.json".format(sys.argv[1]), 'a+') as f:
             json.dump(container, f)
